@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Dashboard Template for Bootstrap</title>
+	<!-- Bootstrap core CSS -->
+	<link href="asserts/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="asserts/css/my-css.css">
+	<!-- Custom styles for this template -->
+	<link href="asserts/css/dashboard.css" rel="stylesheet">
+	<style type="text/css">
+		/* Chart.js */
+
+		@-webkit-keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		.chartjs-render-monitor {
+			-webkit-animation: chartjs-render-animation 0.001s;
+			animation: chartjs-render-animation 0.001s;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="info_setting" style="position: fixed;width: 100%;height:100%;z-index: 9999;display: none;">
+		<div class="row" style="margin-top: 5%;">
+			<div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+				<div class="card card-primary">
+					<div class="card-header">
+						<h4>员工信息<button class="button-login" style="background-image:url(asserts/img/close.png);"
+								onclick="hhide();"></button></h4>
+					</div>
+					<div class="card-body">
+						<form id="upform" method="post" action="#" class="needs-validation">
+							<div class="form-group">
+								<label for="nname">姓名</label>
+								<input id="nname" type="text" class="form-control" name="name" tabindex="1"
+									required="required" autofocus>
+							</div>
+							<div class="form-group">
+								<label for="gender">性别</label>
+								<select id="gender" class="form-control" name="gender" required="required" autofocus>
+									<option value="男" selected>男</option>
+									<option value="女">女</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="email">邮箱</label>
+								<input id="email" type="email" class="form-control" name="email" tabindex="1"
+									required="required" autofocus>
+							</div>
+							<div class="form-group">
+								<label>部门名称</label>
+								<select id="ddepartmentName" name="departmentName" class="form-control" name="type">
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="tel">电话</label>
+								<input id="tel" type="number" class="form-control" name="tel" tabindex="1"
+									required="required" autofocus>
+							</div>
+							<div class="form-group">
+								<label for="bz">备注</label>
+								<input id="bz" type="text" class="form-control" name="bz" tabindex="1"
+									required="required" autofocus>
+							</div>
+							<input type="hidden" id="id" name="id">
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block" tabindex="4" name="action"
+									id="but">提交</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div style="margin: 10px"></div>
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="">用户名</a>
+
+		<ul class="navbar-nav px-3">
+			<li class="nav-item text-nowrap">
+				<a class="nav-link" href="#">注销</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" class="feather feather-home">
+									<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+									<polyline points="9 22 9 12 15 12 15 22"></polyline>
+								</svg>
+								部门管理
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="#">
+								<svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" class="feather feather-users">
+									<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+									<circle cx="9" cy="7" r="4"></circle>
+									<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+									<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+								</svg>
+								入职管理 <span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round" class="feather feather-layers">
+									<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+									<polyline points="2 17 12 22 22 17"></polyline>
+									<polyline points="2 12 12 17 22 12"></polyline>
+								</svg>
+								离职管理
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+				<h2>离职信息</h2>
+				<div>
+					<div>
+						<div class="input-group" style="width: 70%;min-width: 500px; margin-bottom: 20px;">
+							<a class="nav-link" style="margin-right: 20px;">姓名</a>
+							<input id="name" type="text" class="form-control input-lg" style="margin-right: 30px;">
+							<a class="nav-link" style="margin-right: 20px;">部门</a>
+							<input type="text" id="departmentName" class="form-control input-group"
+								style="margin-right: 30px;">
+						</div>
+					</div>
+					<div class="input-group" style="width: 100%;min-width: 600px;">
+						<a class="nav-link" style="margin-right: 20px;">性别</a>
+						<div style="width: 15%;">
+							<select class="form-control" id="sex">
+								<option value="全部">全部</option>
+								<option value="男">男</option>
+								<option value="女">女</option>
+							</select>
+						</div>
+						<a style="width: 50%;"></a>
+						<span class="input-group-addon btn btn-primary" style="float: right;">搜索</span>
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table id="user_table" class="table table-striped table-sm">
+					</table>
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js"></script>
+	<script type="text/javascript" src="asserts/js/popper.min.js"></script>
+	<script type="text/javascript" src="asserts/js/bootstrap.min.js"></script>
+
+	<!-- Icons -->
+	<script type="text/javascript" src="asserts/js/feather.min.js"></script>
+	<script>
+		feather.replace()
+	</script>
+
+	<!-- Graphs -->
+	<script type="text/javascript" src="asserts/js/Chart.min.js"></script>
+	<script type="text/javascript" src="asserts/js/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="asserts/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			loadtable();
+			getDep();
+		});
+		function loadtable() {
+			$('#user_table').bootstrapTable({
+				method: "post",
+				striped: false,
+				singleSelect: false,
+				data: { "name": $('#name').val(), "departmentName": $('#departmentName').val(), "sex": $('#sex').val() },
+				url: "#####",
+				dataType: "json",
+				pagination: true,
+				pageSize: 3,
+				pageNumber: 1,
+				pageList: [3, 10, 20, "All"],
+				smartDisplay: false,
+				search: false,
+				contentType: "application/x-www-form-urlencoded",
+				queryParams: null,
+				columns: [
+					{
+						title: "ID",
+						field: 'id',
+						align: 'center'
+					},
+					{
+						title: '姓名',
+						field: 'name',
+						align: 'center'
+					},
+					{
+						title: '性别',
+						field: 'gender',
+						align: 'center',
+					},
+					{
+						title: '邮箱',
+						field: 'email',
+						align: 'left'
+					},
+					{
+						title: '部门',
+						field: 'departmentName',
+						align: 'center',
+					},
+					{
+						title: '电话',
+						field: 'tel',
+						align: 'left',
+					},
+					{
+						title: '入职时间',
+						field: 'indate',
+						align: 'center',
+					},
+					{
+						title: '部门',
+						field: 'departmentName',
+						align: 'center',
+					},
+					{
+						title: '备注',
+						field: 'bz',
+						align: 'center',
+					},
+					{
+						title: '操作',
+						field: 'id',
+						align: 'center',
+						valign: 'middle',
+						formatter: actionFormatter
+					}
+				]
+			});
+		};
+		function actionFormatter(value, row, index) {
+			var id = value;
+			var result = "";
+			result += "<a onclick=\"sshow(" + id + ",'update')\"  role=\"button\" class=\"btn btn-action badge-success\" data-toggle=\"modal\" data-target=\"#myModal1\">编辑</a>";
+			result += "<a onclick=\"delemp(" + id + ")\"class='btn btn-action badge-danger' style='margin-left: 10px'>离职</a>";
+			return result;
+		}
+
+		function delemp(id) {
+			var action = "deleteNotice";
+			$.ajax({
+				type: "post",
+				data: { "id": id },
+				url: "###",
+				dataType: 'json',
+				async: true,
+				success: function (data) {
+					if (data > 0)
+						alert("删除成功！");
+					loadtable();
+				}
+			});
+		}
+		function hide() {
+			$('#info_setting').hide();
+		}
+		function show(id, action) {
+			$('#nname').val("");
+			$('#gender').val("");
+			$('#emil').val("");
+			$('#tel').val("");
+			$('#bz').val("");
+			$("#ddepartmentName").val('全部');
+
+			$('#info_setting').show();
+			$('#id').val(id);
+
+			if (action == 'update') {
+				$.ajax({
+					type: "post",
+					data: { "id": id },
+					url: "###",
+					dataType: 'json',
+					async: true,
+					success: function (data) {
+						$('#nname').val(data[0].name);
+						$('#gender').val(data[0].gender);
+						$('#emil').val(data[0].emil);
+						$('#tel').val(data[0].tel);
+						$('#bz').val(data[0].bz);
+						$("#ddepartmentName").find("option[text='" + data[0].departmentName + "']").attr("selected", true);
+					}
+				});
+				$('#upfrom').action('###');
+			} else {
+				$('#upfrom').action('###');
+			}
+
+		}
+		function getDep() {
+			$.ajax({
+				type: "post",
+				data: {},
+				url: "###",
+				dataType: 'json',
+				async: true,
+				success: function (data) {
+					for (var i = 0; i < data.length(); i++)
+						$('#ddepartmentName').options.add(new Option(data[i].departmentName, data[i].departmentName))
+				}
+			});
+		}
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>人事管理系统</title>
+	<!-- Bootstrap core CSS -->
+	<link href="asserts/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="asserts/css/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+	<form class="form-signin">
+		<img class="mb-4" src="asserts/img/bootstrap-solid.svg" alt="" width="72" height="72">
+		<h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+		<label class="sr-only">账号</label>
+		<input type="text" class="form-control" id="username" placeholder="账号" required autofocus="">
+		<label class="sr-only">密码</label>
+		<input type="password" class="form-control" id="pwd" placeholder="密码" required>
+		<div class="checkbox mb-3">
+			<label>
+			</label>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">注 册</button>
+		<p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+	</form>
+
+</body>
+<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript">
+	function login() {
+		$('#')
+		if ($('#username').trim() != '' && $('#pwd').trim() != '') {
+			$.ajax({
+				type: "post",
+				data: { "id": id },
+				url: "ww",
+				dataType: 'json',
+				async: false,
+				success:function(){
+					alert("登陆成功！");
+					window.location.href="localhost:8080/admin/";
+				},
+				error: function () {
+					alert("账号或密码错误！");
+				}
+			});
+		}
+
+	}
+</script>
+
+</html>
