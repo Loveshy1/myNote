@@ -22,7 +22,7 @@
 
     1. 将 SSM 工程拆分为多个模块开发：
 
-    ![](C:\Mr.Gao\学习笔记\Development assistance\img\image_16.png)
+    <img src="images/SSM.png" style="zoom:67%;" />
 
 3.  理解继承和聚合 通常继承和聚合同时使用。
 
@@ -93,13 +93,13 @@
 
 记录文件每次的更新，可以对每个版本做一个快照，或是记录补丁文件，适合个人用，如RCS。
 
-![img](images/git1.png)
+![img](C:%5CMr.Gao%5C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CmyNote%5CDevelopment%20assistance%5Cimages%5Cgit1.png)
 
 **2、集中版本控制  SVN**
 
 所有的版本数据都保存在服务器上，协同开发者从服务器上同步更新或上传自己的修改
 
-![img](images/git2.png)
+![img](C:%5CMr.Gao%5C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CmyNote%5CDevelopment%20assistance%5Cimages%5Cgit2.png)
 
 所有的版本数据都存在服务器上，用户的本地只有自己以前所同步的版本，如果不连网的话，用户就看不到历史版本，也无法切换版本验证问题，或在不同分支工作。而且，所有数据都保存在单一的服务器上，有很大的风险这个服务器会损坏，这样就会丢失所有的数据，当然可以定期备份。代表产品：SVN、CVS、VSS
 
@@ -111,7 +111,7 @@
 
 不会因为服务器损坏或者网络问题，造成不能工作的情况！
 
-![img](images/git3.png)
+![img](C:%5CMr.Gao%5C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CmyNote%5CDevelopment%20assistance%5Cimages%5Cgit3.png)
 
 > **Git与SVN的主要区别**
 
@@ -276,7 +276,7 @@ git的工作流程一般是这样的：
 
 日常使用只要记住下图6个命令：
 
-![img](images/git7.png)
+![img](C:%5CMr.Gao%5C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CmyNote%5CDevelopment%20assistance%5Cimages%5Cgit7.png)
 
 > **本地仓库搭建**
 
@@ -389,7 +389,7 @@ ssh-keygen -t rsa
 
 ## 9. GIT分支
 
-![img](images/git8.png)
+![img](C:%5CMr.Gao%5C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CmyNote%5CDevelopment%20assistance%5Cimages%5Cgit8.png)
 
 git分支中常用指令：
 
